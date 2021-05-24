@@ -20,3 +20,7 @@
 *.iml
 out
 gen
+
+# Terraform
+.terraform*
+terraform.tfstate*
