@@ -22,13 +22,9 @@ jobs:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2.3.3
 
-      - name: Get dependencies
-        run: |
-          go mod download
-
       - name: Build
         run: |
-          go build -v .
+          make build
 
   # run acceptance tests in a matrix with Terraform core versions
   test:
@@ -55,9 +51,9 @@ jobs:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2.3.3
 
-      - name: Get dependencies
+      - name: Install
         run: |
-          go mod download
+          make install
 
       - name: TF acceptance tests
         timeout-minutes: 10

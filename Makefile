@@ -11,6 +11,7 @@ OS_NAME=darwin_amd64
 default: install
 
 build:
+	go mod download
 	go build -o ${BINARY}
 
 release:
