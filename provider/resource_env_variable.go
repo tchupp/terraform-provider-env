@@ -9,7 +9,7 @@ import (
 
 func dataEnvVariable() *schema.Resource {
 	return &schema.Resource{
-		ReadContext:   resourceAction,
+		ReadContext: resourceAction,
 		Schema: map[string]*schema.Schema{
 			"name": {
 				Type:        schema.TypeString,
@@ -20,6 +20,7 @@ func dataEnvVariable() *schema.Resource {
 				Type:        schema.TypeString,
 				Computed:    true,
 				Description: "Value of the environment variable.",
+				Sensitive:   true,
 			},
 		},
 	}
